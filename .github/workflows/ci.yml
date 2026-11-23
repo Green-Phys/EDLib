@@ -53,7 +53,7 @@ jobs:
             alps: ON
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # -----------------------------------------------------------------------
       # System dependencies
@@ -77,7 +77,7 @@ jobs:
       - name: Cache ALPSCore
         if: matrix.alps == 'ON'
         id: cache-alpscore
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /opt/alpscore
           key: alpscore-v2.3.3-${{ matrix.cxx }}-MPI${{matrix.mpi}}-${{ runner.os }}
